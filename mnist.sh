@@ -1,0 +1,5 @@
+src/./mnist_classes "$@"
+
+
+
+
