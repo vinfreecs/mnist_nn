@@ -139,26 +139,26 @@ int main(int agrs, char* argv[]){
     double learning_rate = std::stod(configMap["learning_rate"]);
 
     // train dataset with batch size 100 100,784
-    std::string train_image_path = "../"+configMap["rel_path_train_images"];
+    std::string train_image_path = configMap["rel_path_train_images"];
     int train_image_size = 0;
     std::vector<Eigen::MatrixXd> images_batched;
     read_image_as_batch(train_image_path, images_batched, train_image_size, batch_size);
     
 
     // label dataset
-    std::string train_label_path = "../"+configMap["rel_path_train_labels"];
+    std::string train_label_path = configMap["rel_path_train_labels"];
     std::vector<Eigen::MatrixXd> labels_batched;
     read_label_as_batch(labels_batched, train_label_path, batch_size);
         
     // test image dataset
     std::vector<Eigen::MatrixXd> test_images_batched;
-    std::string test_image_path = "../"+configMap["rel_path_test_images"];
+    std::string test_image_path = configMap["rel_path_test_images"];
     int test_image_size = 0;
     read_image_as_batch(test_image_path, test_images_batched, test_image_size, batch_size);
 
     // test label dataset
     std::vector<Eigen::MatrixXd> test_labels_batched;
-    std::string test_label_path = "../"+configMap["rel_path_test_labels"];
+    std::string test_label_path = configMap["rel_path_test_labels"];
     read_label_as_batch(test_labels_batched, test_label_path, batch_size);
 
     std::string log_path = configMap["rel_path_log_file"];
@@ -234,8 +234,8 @@ int main(int agrs, char* argv[]){
             // softmax
             carrier = softmax_ac.forward(carrier);
 
-        out << "Current batch: " << i << std::endl;
-        std::cout << "Current batch: " << i << std::endl;
+        // out << "Current batch: " << i << std::endl;
+        //std::cout << "Current batch: " << i << std::endl;
         for (int j = 0; j < batch_size; j++)
         {
             double pred_valu = 0;

@@ -230,8 +230,11 @@ int main(int agrs, char* argv[])
         }
         
 
-        out << "Current batch: " << i << std::endl;
-        std::cout << "Current batch: " << i << std::endl;
+        if(i==0){
+            out << "Current batch: " << i << std::endl;
+            std::cout << "Current batch: " << i << std::endl;
+        }
+        
         for (int j = 0; j < batch_size; j++)
         {
             double pred_valu = 0;

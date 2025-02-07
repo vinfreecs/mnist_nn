@@ -1,4 +1,4 @@
-src/./mnist_classes "$@"
+src/./mnist_final "$@"
 
 
 
